@@ -75,6 +75,75 @@ h5 {
 	opacity: 1;
 }
 
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(calc(-100% / 3));
+	}
+}
+
+.testimonial-slider {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.testimonial-slider::before,
+.testimonial-slider::after {
+	background: linear-gradient(
+		to right,
+		white 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	content: "";
+	height: 100%;
+	position: absolute;
+	width: 200px;
+	z-index: 2;
+}
+
+.testimonial-slider::after {
+	right: 0;
+	top: 0;
+	transform: rotateZ(180deg);
+}
+
+.testimonial-slider::before {
+	left: 0;
+	top: 0;
+}
+
+.testimonial-track {
+	animation: scroll 40s linear infinite;
+	display: flex;
+	width: calc(350px * 6);
+}
+
+.testimonial-slide {
+	height: 200px;
+	width: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+}
+
+.testimonial-slide p {
+	margin-bottom: 10px;
+}
+
+.testimonial-slide .author {
+	font-weight: bold;
+	font-style: italic;
+}
+
 .wrapper,
 .content {
 	position: relative;
@@ -117,9 +186,47 @@ h5 {
 	object-position: center center;
 }
 
-.weather-widget {
+#weather-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
-	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	overflow-y: auto;
+}
+
+#weather-modal.active {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#weather-modal > div {
+	background-color: white;
 	padding: 20px;
+	border-radius: 8px;
+	max-width: 90%;
+	max-height: 90%;
+	overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+	#home {
+		padding: 2rem;
+	}
+
+	.home-content {
+		text-align: center;
+	}
+
+	.home-content h1 {
+		font-size: 2.5rem;
+	}
+
+	.home-image {
+		margin-top: 2rem;
+	}
 }
