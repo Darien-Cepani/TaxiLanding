@@ -139,12 +139,13 @@ contactForm.addEventListener("submit", (e) => {
 
 	// Format message for WhatsApp
 	const whatsappMessage = `
-		*New Booking Request*
-		Pickup Date and Time: ${formatDateTime(formDataObject["pickup-datetime"])}
-		Full Name: ${formDataObject["full-name"]}
-		Email: ${formDataObject["email"]}
-		Phone: ${formDataObject["phone"]}
-		Message: ${formDataObject["message"]}
+*New Booking Request*
+Pickup Date and Time: ${formatDateTime(formDataObject["pickup-datetime"])}
+Destination: ${formDataObject["destination-address"]}
+Full Name: ${formDataObject["full-name"]}
+Email: ${formDataObject["email"]}
+Phone: ${formDataObject["phone"]}
+Message: ${formDataObject["message"]}
   	`.trim();
 
 	// Encode the message for WhatsApp URL
@@ -243,21 +244,21 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	const cityCoordinates = {
-		berat: { latitude: 40.7058, longitude: 19.9522 },
-		durrës: { latitude: 41.3246, longitude: 19.4565 },
-		elbasan: { latitude: 41.1125, longitude: 20.0822 },
-		fier: { latitude: 40.7239, longitude: 19.5567 },
-		gjirokastër: { latitude: 40.0758, longitude: 20.1389 },
-		korçë: { latitude: 40.6186, longitude: 20.7808 },
-		krujë: { latitude: 41.5089, longitude: 19.7928 },
-		kukës: { latitude: 42.0778, longitude: 20.4222 },
-		lezhë: { latitude: 41.7836, longitude: 19.6436 },
-		përmet: { latitude: 40.2339, longitude: 20.3517 },
-		pogradec: { latitude: 40.9025, longitude: 20.6525 },
-		sarandë: { latitude: 39.8756, longitude: 20.0053 },
-		shkodër: { latitude: 42.0683, longitude: 19.5126 },
-		tirana: { latitude: 41.3275, longitude: 19.8187 },
-		vlorë: { latitude: 40.4667, longitude: 19.4833 },
+		Berat: { latitude: 40.7058, longitude: 19.9522 },
+		Durrës: { latitude: 41.3246, longitude: 19.4565 },
+		Elbasan: { latitude: 41.1125, longitude: 20.0822 },
+		Fier: { latitude: 40.7239, longitude: 19.5567 },
+		Gjirokastër: { latitude: 40.0758, longitude: 20.1389 },
+		Korçë: { latitude: 40.6186, longitude: 20.7808 },
+		Krujë: { latitude: 41.5089, longitude: 19.7928 },
+		Kukës: { latitude: 42.0778, longitude: 20.4222 },
+		Lezhë: { latitude: 41.7836, longitude: 19.6436 },
+		Përmet: { latitude: 40.2339, longitude: 20.3517 },
+		Pogradec: { latitude: 40.9025, longitude: 20.6525 },
+		Sarandë: { latitude: 39.8756, longitude: 20.0053 },
+		Shkodër: { latitude: 42.0683, longitude: 19.5126 },
+		Tirana: { latitude: 41.3275, longitude: 19.8187 },
+		Vlorë: { latitude: 40.4667, longitude: 19.4833 },
 	};
 
 	async function fetchWeather(latitude, longitude, date) {

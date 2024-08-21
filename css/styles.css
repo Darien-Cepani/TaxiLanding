@@ -214,19 +214,20 @@ h5 {
 }
 
 @media (max-width: 768px) {
-	#home {
-		padding: 2rem;
-	}
-
 	.home-content {
 		text-align: center;
 	}
 
-	.home-content h1 {
-		font-size: 2.5rem;
+	#home {
+		background: linear-gradient(
+			0deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 1) 60%,
+			rgba(0, 0, 0, 1) 100%
+		);
 	}
 
-	.home-image {
-		margin-top: 2rem;
+	.home-content h1 {
+		font-size: 2.5rem;
 	}
 }
